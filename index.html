@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kazem (Farhad) Kondori — Warehouse &amp; Distribution Operations Leader</title>
+<style>
+  :root{
+    --ink:#1B1F23;
+    --panel:#23282D;
+    --panel-2:#2B3137;
+    --paper:#F3F1EA;
+    --paper-dim:#E7E3D8;
+    --amber:#E8A33D;
+    --amber-dim:#C98A2E;
+    --teal:#3E8E7E;
+    --steel:#8A94A0;
+    --steel-dark:#5B646E;
+    --line: rgba(243,241,234,0.14);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  .mono{ font-family:'Courier New', 'Consolas', monospace; }
+  .display{ font-family:'Arial Narrow', 'Helvetica Neue Condensed', Impact, sans-serif; text-transform:uppercase; letter-spacing:.03em; }
+
+  a{ color:var(--amber); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+
+  .wrap{ max-width:920px; margin:0 auto; padding:0 32px; }
+
+  /* ===== HEADER / MANIFEST STRIP ===== */
+  header{
+    background:
+      repeating-linear-gradient(135deg, rgba(232,163,61,0.10) 0px, rgba(232,163,61,0.10) 14px, transparent 14px, transparent 28px),
+      var(--panel);
+    border-bottom:3px solid var(--amber);
+    padding:38px 0 30px;
+  }
+  .manifest-id{
+    font-size:11px;
+    letter-spacing:.14em;
+    color:var(--steel);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:22px;
+    padding-bottom:14px;
+    border-bottom:1px dashed var(--line);
+  }
+  .manifest-id span b{ color:var(--amber); font-weight:600; }
+
+  .name-block h1{
+    font-size:44px;
+    font-weight:600;
+    letter-spacing:.01em;
+    margin:0 0 6px;
+    color:var(--paper);
+  }
+  .role-line{
+    font-size:15px;
+    letter-spacing:.06em;
+    color:var(--amber);
+    font-weight:500;
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    font-size:13px;
+    color:var(--steel);
+  }
+  .contact-row a{ color:var(--paper); }
+  .contact-row .sep{ color:var(--steel-dark); }
+
+  /* ===== RATING PLATE STATS ===== */
+  .plate-section{ padding:40px 0 10px; }
+  .plate-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .plate{
+    flex:1 1 150px;
+    position:relative;
+    background:linear-gradient(160deg, var(--panel-2), var(--panel));
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:18px 16px 16px;
+  }
+  .plate::before, .plate::after{
+    content:"";
+    position:absolute;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--steel-dark);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.5), 0 0 0 1px rgba(243,241,234,0.06);
+    top:8px;
+  }
+  .plate::before{ left:8px; }
+  .plate::after{ right:8px; }
+  .plate .rivet-b{ position:absolute; width:6px; height:6px; border-radius:50%; background:var(--steel-dark); bottom:8px; box-shadow: inset 0 1px 1px rgba(0,0,0,.5); }
+  .plate .rivet-bl{ left:8px; }
+  .plate .rivet-br{ right:8px; }
+  .plate-label{
+    font-size:10px;
+    letter-spacing:.12em;
+    color:var(--steel);
+    margin-bottom:8px;
+  }
+  .plate-value{
+    font-family:'Arial Narrow', 'Helvetica Neue Condensed', Impact, sans-serif; letter-spacing:.02em;
+    font-size:30px;
+    font-weight:600;
+    color:var(--amber);
+    line-height:1;
+  }
+  .plate-sub{
+    font-size:11px;
+    color:var(--steel);
+    margin-top:6px;
+  }
+
+  /* ===== ZONE SECTIONS ===== */
+  .zone{ padding:46px 0; border-top:1px solid var(--line); }
+  .zone-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:22px;
+  }
+  .zone-num{
+    font-family:'Arial Narrow', 'Helvetica Neue Condensed', Impact, sans-serif; letter-spacing:.02em;
+    font-size:13px;
+    color:var(--ink);
+    background:var(--amber);
+    padding:4px 10px;
+    border-radius:3px;
+    letter-spacing:.06em;
+    font-weight:600;
+  }
+  .zone-title{
+    font-family:'Arial Narrow', 'Helvetica Neue Condensed', Impact, sans-serif; letter-spacing:.02em;
+    font-size:22px;
+    letter-spacing:.03em;
+    color:var(--paper);
+  }
+
+  .summary-text{
+    font-size:15.5px;
+    color:#DAD7CC;
+    max-width:760px;
+  }
+
+  /* skill chips */
+  .chip-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; }
+  .chip{
+    font-family:'Courier New', 'Consolas', monospace;
+    font-size:11.5px;
+    color:var(--paper);
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    border-left:3px solid var(--teal);
+    padding:6px 10px;
+    border-radius:3px;
+    letter-spacing:.02em;
+  }
+
+  /* experience log */
+  .log-entry{
+    display:flex;
+    gap:20px;
+    padding:20px 0;
+    border-top:1px solid var(--line);
+  }
+  .log-entry:first-child{ border-top:none; padding-top:0; }
+  .log-dock{
+    flex:0 0 74px;
+    text-align:center;
+  }
+  .dock-badge{
+    font-family:'Arial Narrow', 'Helvetica Neue Condensed', Impact, sans-serif; letter-spacing:.02em;
+    font-size:11px;
+    color:var(--steel);
+    letter-spacing:.08em;
+  }
+  .dock-badge b{
+    display:block;
+    font-size:26px;
+    color:var(--amber);
+    line-height:1.1;
+  }
+  .log-body{ flex:1; min-width:0; }
+  .log-title-row{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-bottom:2px;
+  }
+  .log-title{
+    font-size:16.5px;
+    font-weight:600;
+    color:var(--paper);
+  }
+  .log-date{
+    font-family:'Courier New', 'Consolas', monospace;
+    font-size:12px;
+    color:var(--amber-dim);
+    white-space:nowrap;
+  }
+  .log-org{
+    font-size:12.5px;
+    color:var(--steel);
+    font-style:italic;
+    margin-bottom:10px;
+  }
+  .log-body ul{
+    margin:0;
+    padding-left:18px;
+    color:#CFCCC1;
+    font-size:14px;
+  }
+  .log-body li{ margin-bottom:6px; }
+  .log-body li::marker{ color:var(--teal); }
+
+  /* diagram blocks */
+  .diagram-block{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:22px 24px 18px;
+    page-break-inside:avoid;
+    break-inside:avoid;
+  }
+  .diagram-block.blueprint-bg{
+    background-color:var(--panel);
+  }
+  .diagram-caption{
+    font-size:11px;
+    letter-spacing:.1em;
+    color:var(--steel);
+    margin-bottom:14px;
+  }
+
+  /* gauges */
+  .gauge-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:2px;
+  }
+  .gauge-svg{ flex:0 0 auto; }
+  .gauge-arc{
+    transition: stroke-dashoffset 1.4s cubic-bezier(.22,.9,.3,1);
+  }
+  .gauge-num{
+    font-size:26px;
+    font-weight:600;
+    color:var(--paper);
+  }
+
+  /* blueprint grid backdrop for technical sections */
+  .blueprint-bg{
+    background-image:
+      linear-gradient(rgba(62,142,126,0.09) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(62,142,126,0.09) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-color: var(--panel);
+    border:1px solid var(--line);
+  }
+
+  /* timeline connector for experience log */
+  .log-list{ position:relative; }
+  .log-list::before{
+    content:"";
+    position:absolute;
+    left:37px;
+    top:8px;
+    bottom:8px;
+    width:1px;
+    background:repeating-linear-gradient(to bottom, var(--amber-dim) 0, var(--amber-dim) 4px, transparent 4px, transparent 9px);
+  }
+  @media (max-width:640px){
+    .log-list::before{ left:25px; }
+  }
+
+  /* scroll-fade animation */
+  .fade-in{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .fade-in.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* certifications */
+  .cert-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .cert-tag{
+    font-family:'Courier New', 'Consolas', monospace;
+    font-size:12px;
+    color:var(--ink);
+    background:var(--paper-dim);
+    padding:7px 12px;
+    border-radius:3px;
+    font-weight:500;
+  }
+
+  /* footer */
+  footer{
+    background:var(--panel);
+    border-top:3px solid var(--amber);
+    padding:34px 0 30px;
+    text-align:center;
+  }
+  footer .fline{
+    font-family:'Arial Narrow', 'Helvetica Neue Condensed', Impact, sans-serif; letter-spacing:.02em;
+    font-size:18px;
+    color:var(--paper);
+    margin-bottom:10px;
+    letter-spacing:.02em;
+  }
+  footer .fcontacts{
+    font-size:13px;
+    color:var(--steel);
+  }
+  footer .fcontacts a{ color:var(--amber); }
+  footer .fnote{
+    margin-top:16px;
+    font-size:11px;
+    color:var(--steel-dark);
+    letter-spacing:.04em;
+  }
+
+  @media (max-width:640px){
+    .wrap{ padding:0 20px; }
+    .name-block h1{ font-size:32px; }
+    .plate-grid{ gap:10px; }
+    .plate{ flex:1 1 120px; }
+    .log-entry{ gap:12px; }
+    .log-dock{ flex:0 0 50px; }
+    .dock-badge b{ font-size:20px; }
+  }
+
+  @media print{
+    body{ background:var(--ink) !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="manifest-id mono">
+      <span>PORTFOLIO REF: <b>KFK-2026-WM</b></span>
+      <span>ISSUED: <b>AUG 2026</b></span>
+      <span>STATUS: <b>ACTIVELY SEEKING</b></span>
+    </div>
+    <div class="name-block">
+      <h1>Kazem (Farhad) Kondori</h1>
+      <div class="role-line">Warehouse, Facilities &amp; Distribution Operations Leader</div>
+      <div class="contact-row mono">
+        <span>North York, ON</span>
+        <span class="sep">/</span>
+        <a href="tel:+16477709017">647-770-9017</a>
+        <span class="sep">/</span>
+        <a href="mailto:farhad.kondori@gmail.com">farhad.kondori@gmail.com</a>
+        <span class="sep">/</span>
+        <a href="https://linkedin.com/in/kazem-kondori-053225245" target="_blank" rel="noopener">linkedin.com/in/kazem-kondori-053225245</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="plate-section">
+  <div class="wrap">
+    <div class="plate-grid">
+      <div class="plate gauge-plate">
+        <span class="rivet-b rivet-bl"></span><span class="rivet-b rivet-br"></span>
+        <div class="plate-label mono">INVENTORY ACCURACY</div>
+        <div class="gauge-row">
+          <svg class="gauge-svg" viewBox="0 0 100 100" width="64" height="64">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#3A4048" stroke-width="8"/>
+            <circle class="gauge-arc" data-pct="98" cx="50" cy="50" r="42" fill="none" stroke="#E8A33D" stroke-width="8" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="263.9" transform="rotate(-90 50 50)"/>
+          </svg>
+          <div class="gauge-num mono"><span class="count-up" data-target="98">0</span>%</div>
+        </div>
+        <div class="plate-sub">sustained via disciplined cycle counts</div>
+      </div>
+      <div class="plate gauge-plate">
+        <span class="rivet-b rivet-bl"></span><span class="rivet-b rivet-br"></span>
+        <div class="plate-label mono">EFFICIENCY GAIN</div>
+        <div class="gauge-row">
+          <svg class="gauge-svg" viewBox="0 0 100 100" width="64" height="64">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#3A4048" stroke-width="8"/>
+            <circle class="gauge-arc" data-pct="30" cx="50" cy="50" r="42" fill="none" stroke="#3E8E7E" stroke-width="8" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="263.9" transform="rotate(-90 50 50)"/>
+          </svg>
+          <div class="gauge-num mono"><span class="count-up" data-target="30">0</span>%</div>
+        </div>
+        <div class="plate-sub">from layout &amp; workflow redesign</div>
+      </div>
+      <div class="plate">
+        <span class="rivet-b rivet-bl"></span><span class="rivet-b rivet-br"></span>
+        <div class="plate-label mono">TEAM LED</div>
+        <div class="plate-value">25+</div>
+        <div class="plate-sub">full-time &amp; seasonal, two shifts</div>
+      </div>
+      <div class="plate">
+        <span class="rivet-b rivet-bl"></span><span class="rivet-b rivet-br"></span>
+        <div class="plate-label mono">DUAL SCOPE</div>
+        <div class="plate-value" style="font-size:22px;">Warehouse<br>+ Facilities</div>
+        <div class="plate-sub">HVAC, electrical, cold rooms, generators</div>
+      </div>
+      <div class="plate">
+        <span class="rivet-b rivet-bl"></span><span class="rivet-b rivet-br"></span>
+        <div class="plate-label mono">RECOGNITION</div>
+        <div class="plate-value" style="font-size:20px;">CHFA<br>Award '2024</div>
+        <div class="plate-sub">Canadian Health Food Association - Brand Excellence Award — highest customer satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zone fade-in">
+  <div class="wrap">
+    <div class="zone-head">
+      <span class="zone-num">ZONE 1</span>
+      <span class="zone-title display">Operations Summary</span>
+    </div>
+    <p class="summary-text">
+      Warehouse, Facilities, and Distribution Leader with 10+ years across logistics, fulfillment, inventory
+      control, and building operations, including 6+ years in dual-scope supervisory and management roles
+      directing two-shift, multi-facility teams of up to 25+ staff. Held full facility management responsibility
+      alongside warehouse operations — building infrastructure (HVAC, electrical, plumbing, cold rooms, generators),
+      contractor sourcing and cost control, equipment maintenance records, and carrier/dispatch coordination.
+      Direct QA sampling experience coordinating with Quality Assurance and external labs. Proven record of
+      building a culture of safety, accountability, and continuous improvement — translating hands-on floor
+      leadership into measurable results in inventory accuracy, throughput, and cost control. Fluent in SAP ERP,
+      WMS platforms, EDI transactions, and KPI-driven decision-making, with direct experience shaping in-house
+      system requirements. Currently active as an independent warehouse operations consultant.
+    </p>
+    <div class="chip-row">
+      <span class="chip">SAP ERP</span>
+      <span class="chip">ADVANCEPRO</span>
+      <span class="chip">DATA NINJA WMS</span>
+      <span class="chip">EDI 856 ASN</span>
+      <span class="chip">CYCLE COUNTING</span>
+      <span class="chip">KPI REPORTING</span>
+      <span class="chip">FACILITIES & INFRASTRUCTURE</span>
+      <span class="chip">CONTRACTOR & VENDOR MGMT</span>
+      <span class="chip">QA SAMPLING & LAB COORDINATION</span>
+      <span class="chip">LEAN / CONTINUOUS IMPROVEMENT</span>
+      <span class="chip">OHSA / WHMIS</span>
+    </div>
+  </div>
+</section>
+
+<section class="zone fade-in">
+  <div class="wrap">
+    <div class="zone-head">
+      <span class="zone-num">ZONE 2</span>
+      <span class="zone-title display">Experience Log</span>
+    </div>
+
+    <div class="log-list">
+    <div class="log-entry">
+      <div class="log-dock">
+        <span class="dock-badge">DOOR<b>05</b></span>
+      </div>
+      <div class="log-body">
+        <div class="log-title-row">
+          <span class="log-title">Independent Consultant — Warehouse Operations &amp; Supply Chain</span>
+          <span class="log-date">FEB 2025 — PRESENT</span>
+        </div>
+        <div class="log-org">Saturn Maple Inc. · Ontario · Part-Time / Advisory</div>
+        <ul>
+          <li>Redesigned a ~2,000 sq. ft. compact warehouse layout, increasing storage &amp; racking capacity by ~35% while maximizing machinery placement.</li>
+          <li>Sourced cost-competitive equipment and packaging suppliers, and advised on health &amp; safety protocols where none previously existed.</li>
+          <li>Ongoing technical advisory on equipment decisions — e.g. recommending a used electric reach truck over a propane forklift for a low-ventilation space.</li>
+          <li>Additionally consult with multiple startup companies in Iran on warehouse layout design, workflow optimization, and equipment selection.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-dock">
+        <span class="dock-badge">DOOR<b>04</b></span>
+      </div>
+      <div class="log-body">
+        <div class="log-title-row">
+          <span class="log-title">Assistant Warehouse Manager / Facility Manager</span>
+          <span class="log-date">MAR 2018 — NOV 2024</span>
+        </div>
+        <div class="log-org">CanPrev Natural Health Products · Scarborough, ON</div>
+        <ul>
+          <li>Held dual responsibility for warehouse operations and full facility management across two buildings (80,000 + 45,000 sq ft), leading a team of 25+ full-time and seasonal staff supporting 900+ SKUs and ~500 orders/day.</li>
+          <li>Managed all building infrastructure — HVAC, plumbing, electrical, lighting, cold rooms, and generators — sourcing contractors through competitive quoting to control cost while maintaining service quality.</li>
+          <li>Coordinated pickup/delivery scheduling with carrier and trucking dispatch; personally drove rental trucks across the GTA for pickups and deliveries. Maintained inspection and maintenance records for forklifts, reach trucks, and pallet jacks.</li>
+          <li>Worked directly with Quality Assurance, pulling QC samples from received goods and coordinating lab testing and documentation.</li>
+          <li>Maintained ~98% inventory accuracy through disciplined SAP ERP/WMS transactions and root-cause investigation of discrepancies.</li>
+          <li>Contributed functional requirements to CanPrev's in-house WMS build ("Kinetics"), focused on automating and speeding up receiving.</li>
+          <li>Redesigned warehouse layout and standardized procedures — a 30% efficiency improvement.</li>
+          <li>Recruited, trained, and coached two shift supervisors and their associates, handling performance management and disciplinary matters; fulfillment speed helped drive CanPrev's CHFA Best Brand Award (Sep 2024) for highest customer satisfaction.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-dock">
+        <span class="dock-badge">DOOR<b>03</b></span>
+      </div>
+      <div class="log-body">
+        <div class="log-title-row">
+          <span class="log-title">Warehouse Supervisor</span>
+          <span class="log-date">MAY 2016 — FEB 2018</span>
+        </div>
+        <div class="log-org">CanPrev Natural Health Products · Scarborough, ON</div>
+        <ul>
+          <li>Supervised a team of 10 across receiving, picking, replenishment, and shipping.</li>
+          <li>Supported inventory accuracy through cycle counts and ERP transaction auditing; trained staff on procedures and safety.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="log-entry">
+      <div class="log-dock">
+        <span class="dock-badge">DOOR<b>02</b></span>
+      </div>
+      <div class="log-body">
+        <div class="log-title-row">
+          <span class="log-title">Warehouse &amp; Inventory Coordinator</span>
+          <span class="log-date">JAN 2012 — SEP 2015</span>
+        </div>
+        <div class="log-org">Net Gostaran Pouya Inc. · Tehran, Iran</div>
+        <ul>
+          <li>Managed inventory records, stock movement, and documentation; coordinated receiving/shipping and maintained an organized warehouse layout.</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="zone fade-in">
+  <div class="wrap">
+    <div class="zone-head">
+      <span class="zone-num">ZONE 3</span>
+      <span class="zone-title display">Operational Snapshots</span>
+    </div>
+
+    <div class="diagram-block blueprint-bg fade-in">
+      <div class="diagram-caption mono">LEADERSHIP STRUCTURE — CANPREV, MAR 2018 – NOV 2024</div>
+      <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <!-- top box -->
+        <rect x="270" y="10" width="260" height="56" rx="6" fill="#2B3137" stroke="#E8A33D" stroke-width="1.5"/>
+        <text x="400" y="34" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-size="15" font-weight="700" fill="#F3F1EA">KAZEM (FARHAD) KONDORI</text>
+        <text x="400" y="52" text-anchor="middle" font-family="Courier New, monospace" font-size="10.5" fill="#E8A33D">ASST. WAREHOUSE MGR / FACILITY MGR</text>
+
+        <!-- connector lines down -->
+        <line x1="400" y1="66" x2="400" y2="86" stroke="#5B646E" stroke-width="1.5"/>
+        <line x1="185" y1="86" x2="615" y2="86" stroke="#5B646E" stroke-width="1.5"/>
+        <line x1="185" y1="86" x2="185" y2="100" stroke="#5B646E" stroke-width="1.5"/>
+        <line x1="615" y1="86" x2="615" y2="100" stroke="#5B646E" stroke-width="1.5"/>
+
+        <!-- shift 1 box -->
+        <rect x="70" y="100" width="230" height="50" rx="6" fill="#23282D" stroke="#3E8E7E" stroke-width="1.5"/>
+        <text x="185" y="122" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-size="13" font-weight="700" fill="#F3F1EA">SHIFT 1</text>
+        <text x="185" y="140" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#8A94A0">2 SUPERVISORS — DIRECT REPORTS</text>
+
+        <!-- shift 2 box -->
+        <rect x="500" y="100" width="230" height="50" rx="6" fill="#23282D" stroke="#3E8E7E" stroke-width="1.5"/>
+        <text x="615" y="122" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-size="13" font-weight="700" fill="#F3F1EA">SHIFT 2</text>
+        <text x="615" y="140" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#8A94A0">2 SUPERVISORS — DIRECT REPORTS</text>
+
+        <!-- connectors to associates -->
+        <line x1="185" y1="150" x2="185" y2="170" stroke="#5B646E" stroke-width="1.5"/>
+        <line x1="615" y1="150" x2="615" y2="170" stroke="#5B646E" stroke-width="1.5"/>
+
+        <!-- associates boxes -->
+        <rect x="70" y="170" width="230" height="50" rx="6" fill="#1B1F23" stroke="#5B646E" stroke-width="1.2" stroke-dasharray="3,3"/>
+        <text x="185" y="192" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-size="12.5" font-weight="600" fill="#DAD7CC">WAREHOUSE ASSOCIATES</text>
+        <text x="185" y="209" text-anchor="middle" font-family="Courier New, monospace" font-size="9.5" fill="#8A94A0">FULL-TIME + SEASONAL</text>
+
+        <rect x="500" y="170" width="230" height="50" rx="6" fill="#1B1F23" stroke="#5B646E" stroke-width="1.2" stroke-dasharray="3,3"/>
+        <text x="615" y="192" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-size="12.5" font-weight="600" fill="#DAD7CC">WAREHOUSE ASSOCIATES</text>
+        <text x="615" y="209" text-anchor="middle" font-family="Courier New, monospace" font-size="9.5" fill="#8A94A0">FULL-TIME + SEASONAL</text>
+
+        <!-- footer total -->
+        <text x="400" y="248" text-anchor="middle" font-family="Courier New, monospace" font-size="11" fill="#E8A33D">TOTAL TEAM LED: 25+ ACROSS TWO SHIFTS</text>
+      </svg>
+    </div>
+
+    <div class="diagram-block blueprint-bg fade-in" style="margin-top:38px;">
+      <div class="diagram-caption mono">WAREHOUSE WORKFLOW REDESIGN — 30% EFFICIENCY GAIN</div>
+      <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <!-- flow steps -->
+        <g font-family="Arial Narrow, sans-serif">
+          <!-- step boxes -->
+          <rect x="10" y="30" width="130" height="46" rx="5" fill="#2B3137" stroke="#8A94A0" stroke-width="1.2"/>
+          <text x="75" y="58" text-anchor="middle" font-size="13" font-weight="600" fill="#F3F1EA">RECEIVING</text>
+
+          <rect x="172" y="30" width="130" height="46" rx="5" fill="#2B3137" stroke="#8A94A0" stroke-width="1.2"/>
+          <text x="237" y="58" text-anchor="middle" font-size="13" font-weight="600" fill="#F3F1EA">PUT-AWAY</text>
+
+          <rect x="334" y="30" width="130" height="46" rx="5" fill="#2B3137" stroke="#8A94A0" stroke-width="1.2"/>
+          <text x="399" y="58" text-anchor="middle" font-size="13" font-weight="600" fill="#F3F1EA">PICKING</text>
+
+          <rect x="496" y="30" width="130" height="46" rx="5" fill="#2B3137" stroke="#8A94A0" stroke-width="1.2"/>
+          <text x="561" y="58" text-anchor="middle" font-size="13" font-weight="600" fill="#F3F1EA">PACKING</text>
+
+          <rect x="658" y="30" width="132" height="46" rx="5" fill="#2B3137" stroke="#E8A33D" stroke-width="1.6"/>
+          <text x="724" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#E8A33D">SHIPPING</text>
+
+          <!-- arrows -->
+          <path d="M140,53 L172,53" stroke="#5B646E" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <path d="M302,53 L334,53" stroke="#5B646E" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <path d="M464,53 L496,53" stroke="#5B646E" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <path d="M626,53 L658,53" stroke="#5B646E" stroke-width="1.5" marker-end="url(#arrow)"/>
+        </g>
+        <defs>
+          <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#5B646E"/>
+          </marker>
+        </defs>
+
+        <!-- redesign callout -->
+        <line x1="10" y1="110" x2="790" y2="110" stroke="#3E8E7E" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="10" y="132" font-family="Courier New, monospace" font-size="11" fill="#3E8E7E">LAYOUT REDESIGN + STANDARDIZED PROCEDURES ACROSS ALL FIVE STAGES</text>
+        <text x="10" y="168" font-family="Arial Narrow, sans-serif" font-size="26" font-weight="700" fill="#E8A33D">-30% OVERALL EFFICIENCY GAIN</text>
+      </svg>
+    </div>
+
+    <div class="diagram-block blueprint-bg fade-in" style="margin-top:38px;">
+      <div class="diagram-caption mono">FACILITY SYSTEMS MAP — DUAL WAREHOUSE + BUILDING MANAGEMENT SCOPE</div>
+      <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <!-- central building outline -->
+        <rect x="300" y="90" width="200" height="130" fill="none" stroke="#DAD7CC" stroke-width="1.6"/>
+        <line x1="300" y1="120" x2="500" y2="120" stroke="#5B646E" stroke-width="1"/>
+        <line x1="340" y1="90" x2="340" y2="220" stroke="#5B646E" stroke-width="1"/>
+        <line x1="460" y1="90" x2="460" y2="220" stroke="#5B646E" stroke-width="1"/>
+        <text x="400" y="108" text-anchor="middle" font-family="Courier New, monospace" font-size="10" fill="#8A94A0">FACILITY</text>
+        <text x="400" y="180" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-size="14" font-weight="700" fill="#F3F1EA">CANPREV</text>
+        <text x="400" y="198" text-anchor="middle" font-family="Courier New, monospace" font-size="9.5" fill="#8A94A0">80K + 45K SQ FT</text>
+
+        <!-- system nodes around it, with connector lines -->
+        <!-- HVAC top-left -->
+        <line x1="300" y1="110" x2="150" y2="55" stroke="#3E8E7E" stroke-width="1.2" stroke-dasharray="3,2"/>
+        <circle cx="150" cy="55" r="4" fill="#3E8E7E"/>
+        <text x="150" y="38" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-size="12" font-weight="600" fill="#DAD7CC">HVAC</text>
+
+        <!-- Electrical top-right -->
+        <line x1="500" y1="110" x2="650" y2="55" stroke="#3E8E7E" stroke-width="1.2" stroke-dasharray="3,2"/>
+        <circle cx="650" cy="55" r="4" fill="#3E8E7E"/>
+        <text x="650" y="38" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-size="12" font-weight="600" fill="#DAD7CC">ELECTRICAL</text>
+
+        <!-- Plumbing left -->
+        <line x1="300" y1="150" x2="120" y2="150" stroke="#3E8E7E" stroke-width="1.2" stroke-dasharray="3,2"/>
+        <circle cx="120" cy="150" r="4" fill="#3E8E7E"/>
+        <text x="120" y="133" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-size="12" font-weight="600" fill="#DAD7CC">PLUMBING</text>
+
+        <!-- Cold Rooms right -->
+        <line x1="500" y1="150" x2="680" y2="150" stroke="#3E8E7E" stroke-width="1.2" stroke-dasharray="3,2"/>
+        <circle cx="680" cy="150" r="4" fill="#3E8E7E"/>
+        <text x="680" y="133" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-size="12" font-weight="600" fill="#DAD7CC">COLD ROOMS</text>
+
+        <!-- Generators bottom-left -->
+        <line x1="300" y1="200" x2="150" y2="255" stroke="#3E8E7E" stroke-width="1.2" stroke-dasharray="3,2"/>
+        <circle cx="150" cy="255" r="4" fill="#3E8E7E"/>
+        <text x="150" y="273" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-size="12" font-weight="600" fill="#DAD7CC">GENERATORS</text>
+
+        <!-- Waste/Snow bottom-right -->
+        <line x1="500" y1="200" x2="650" y2="255" stroke="#3E8E7E" stroke-width="1.2" stroke-dasharray="3,2"/>
+        <circle cx="650" cy="255" r="4" fill="#3E8E7E"/>
+        <text x="650" y="273" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-size="12" font-weight="600" fill="#DAD7CC">WASTE &amp; SNOW</text>
+
+        <!-- Contractor sourcing callout bottom -->
+        <text x="400" y="292" text-anchor="middle" font-family="Courier New, monospace" font-size="10.5" fill="#E8A33D">ALL SYSTEMS SOURCED &amp; MANAGED VIA COMPETITIVE CONTRACTOR QUOTING</text>
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+<section class="zone fade-in">
+  <div class="wrap">
+    <div class="zone-head">
+      <span class="zone-num">ZONE 4</span>
+      <span class="zone-title display">Education &amp; Certifications</span>
+    </div>
+    <div class="cert-grid">
+      <span class="cert-tag">B.S. — Statistics</span>
+      <span class="cert-tag">MCSE</span>
+      <span class="cert-tag">Supply Chain Mgmt Certificate — Rutgers University</span>
+      <span class="cert-tag">Forklift Certification</span>
+      <span class="cert-tag">ISO 9001 — Quality Management System (QMS)</span>
+      <span class="cert-tag">GMP</span>
+      <span class="cert-tag">Lean Fundamentals</span>
+      <span class="cert-tag">WHMIS</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fline display">Let's talk operations.</div>
+    <div class="fcontacts mono">
+      <a href="mailto:farhad.kondori@gmail.com">farhad.kondori@gmail.com</a>
+      &nbsp;·&nbsp; 647-770-9017
+      &nbsp;·&nbsp;
+      <a href="https://linkedin.com/in/kazem-kondori-053225245" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="fnote mono">ALL METRICS VERIFIED · CANPREV NATURAL HEALTH PRODUCTS &amp; SATURN MAPLE INC.</div>
+  </div>
+</footer>
+
+<script>
+  // Count-up animation for gauge numbers
+  function animateCountUp(el, target, duration) {
+    var start = 0;
+    var startTime = null;
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Radial gauge fill animation
+  function animateGauge(circle) {
+    var pct = parseFloat(circle.getAttribute('data-pct'));
+    var circumference = 263.9;
+    var offset = circumference - (pct / 100) * circumference;
+    requestAnimationFrame(function(){
+      circle.style.strokeDashoffset = offset;
+    });
+  }
+
+  function runEntranceAnimations(root) {
+    root.querySelectorAll('.count-up').forEach(function(el){
+      if (el.dataset.done) return;
+      el.dataset.done = "1";
+      animateCountUp(el, parseInt(el.getAttribute('data-target'), 10), 1200);
+    });
+    root.querySelectorAll('.gauge-arc').forEach(function(el){
+      if (el.dataset.done) return;
+      el.dataset.done = "1";
+      animateGauge(el);
+    });
+  }
+
+  // Run gauge/count animation once page loads (stat plates are above the fold)
+  window.addEventListener('DOMContentLoaded', function(){
+    runEntranceAnimations(document);
+  });
+
+  // Scroll-triggered fade-in for zone sections and diagram blocks
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          runEntranceAnimations(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.fade-in').forEach(function(el){ el.classList.add('is-visible'); });
+  }
+</script>
+</body>
+</html>
